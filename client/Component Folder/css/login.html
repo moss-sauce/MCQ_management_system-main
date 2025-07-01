@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCQ System Login</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-image: url("https://images.unsplash.com/photo-1705721357357-ab87523248f7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzNTc5fDB8MXxzZWFyY2h8OHx8Ym9va3N8ZW58MHx8fHwxNzUwNzQ5MDAwfDA&ixlib=rb-4.1.0&q=80&w=2560");
+            backdrop-filter: blur(5.11px);
+            background-repeat: no-repeat;
+            background-blend-mode: multiply;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin-top: 0;
+            padding-top: 0;
+            box-sizing: border-box;
+        }
+        
+        .headline {
+            color: white;
+            text-align: center;
+            margin-bottom: 30px;
+            text-shadow: 0 2px 4px rgba(0, 0,0.3);
+            max-width: 600px;
+            width: 100%;
+            padding-top: 40px;
+        }
+
+        .headline h2 {
+            font-size: 3.5rem; /* Larger font size for "Focus" */
+            font-weight: 700;
+            margin: 0;
+            line-height: 1.2;
+            letter-spacing: 0.5px;
+            display: inline-block;
+        }
+
+        .headline .subtitle {
+            font-size: 1.2rem; /* Smaller font size for subtitle */
+            font-weight: 400;
+            display: block;
+            margin-top: 10px;
+            line-height: 1.4;
+        }
+        
+        .login-container {
+            background: rgba(255,255,255,0.9);
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            width: 100%;
+            max-width: 400px;
+            padding: 40px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .logo {
+            margin-bottom: 30px;
+        }
+
+        .logo img {
+            height: 60px;
+            width: auto;
+        }
+
+        h1 {
+            color: #2d3748;
+            font-size: 24px;
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            color: #4a5568;
+            margin-bottom: 8px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #4299e1;
+            box-shadow: 0 0 0 3px rgba(66,153,225,0.1);
+        }
+
+        .login-btn {
+            width: 100%;
+            padding: 14px;
+            background-color: #4299e1;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .login-btn:hover {
+            background-color: #3182ce;
+        }
+
+        .footer {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #718096;
+        }
+
+        .footer a {
+            color: #4299e1;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+     <div class="headline">
+        <h2>Focus</h2>
+        <span class="subtitle">The Only Study Companion You Need!!!</span>
+    </div>
+
+    <div class="login-container">
+        <div class="logo">
+            <img src="your-logo.png" alt="MCQ System Logo">
+        </div>
+        <h1>Welcome Back</h1>
+        <form class="login-form">
+            <div class="input-group">
+                <label for="mobile">Mobile Number</label>
+                <input type="tel" id="mobile" placeholder="01XXXXXXXXX" pattern="[0-9]{11}" required>
+            </div>
+            <button type="submit" class="login-btn">Send OTP</button>
+        </form>
+        <div class="footer">
+            <p>New to MCQ System? <a href="#">Create Account</a></p>
+        </div>
+    </div>
+</body>
+</html>
