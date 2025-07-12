@@ -15,50 +15,78 @@
             background-position: center;
             display: flex;
             flex-direction: column;
-            align-items: center;
-            justify-content: center;
             min-height: 100vh;
-            margin-top: 0;
-            padding-top: 0;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            overflow-x: hidden; /* Prevent horizontal scrolling */
+        }
+
+        .top-bar {
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 10px 30px;
+            color: white;
+            font-size: 18px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             box-sizing: border-box;
         }
-        
+
+        .top-bar .nav-buttons a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            padding: 8px 16px;
+            border: 1px solid #ffffff;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .top-bar .nav-buttons a:hover {
+            background-color: #4299e1;
+            color: white;
+        }
+
         .headline {
             color: white;
             text-align: center;
-            margin-bottom: 30px;
-            text-shadow: 0 2px 4px rgba(0, 0,0.3);
+            margin: 100px 0 30px 0; /* Increased top margin to push down */
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
             max-width: 600px;
             width: 100%;
-            padding-top: 40px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .headline h2 {
-            font-size: 3.5rem; /* Larger font size for "Focus" */
+            font-size: 3.5rem;
             font-weight: 700;
             margin: 0;
             line-height: 1.2;
             letter-spacing: 0.5px;
-            display: inline-block;
         }
 
         .headline .subtitle {
-            font-size: 1.2rem; /* Smaller font size for subtitle */
+            font-size: 1.2rem;
             font-weight: 400;
-            display: block;
             margin-top: 10px;
             line-height: 1.4;
         }
-        
+
         .login-container {
-            background: rgba(255,255,255,0.9);
+            background: rgba(255, 255, 255, 0.9);
             border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-            width: 100%;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
             max-width: 400px;
+            width: 100%;
             padding: 40px;
+            margin: 20vh auto 40px auto; /* Centered vertically */
             text-align: center;
-            margin-bottom: 20px;
+            box-sizing: border-box;
         }
 
         .logo {
@@ -97,12 +125,13 @@
             border-radius: 8px;
             font-size: 16px;
             transition: border-color 0.3s;
+            box-sizing: border-box;
         }
 
         input:focus {
             outline: none;
             border-color: #4299e1;
-            box-shadow: 0 0 0 3px rgba(66,153,225,0.1);
+            box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.1);
         }
 
         .login-btn {
@@ -137,14 +166,86 @@
         .footer a:hover {
             text-decoration: underline;
         }
+
+        .bottom-bar {
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #ccc;
+            padding: 20px 40px;
+            text-align: center;
+            font-size: 14px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            box-sizing: border-box;
+            display: none; /* Hidden by default */
+            transition: opacity 0.3s ease-in-out;
+            z-index: 1000;
+        }
+
+        .bottom-bar.visible {
+            display: block;
+            opacity: 1;
+        }
+
+        .bottom-bar p {
+            margin: 5px 0;
+        }
+
+        .bottom-bar a {
+            color: #4299e1;
+            text-decoration: noneUncaught JavaScript error: SyntaxError: Unexpected token '['
+            at HTMLInputElement.<anonymous> (index.html:171:37)
+        }
+
+        .bottom-bar a:hover {
+            text-decoration: underline;
+        }
+
+        .content-spacer {
+            min-height: 50vh; /* Reduced scrollable area */
+        }
+
+        @media screen and (max-width: 480px) {
+            .headline h2 {
+                font-size: 2.2rem;
+            }
+
+            .login-container {
+                padding: 30px 20px;
+                margin: 10vh auto 20px auto;
+            }
+
+            .top-bar, .bottom-bar {
+                padding: 15px;
+                font-size: 14px;
+            }
+
+            .top-bar .nav-buttons a {
+                margin-left: 10px;
+                padding: 6px 12px;
+                font-size: 12px;
+            }
+        }
     </style>
 </head>
 <body>
-     <div class="headline">
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div>📘 Focus App</div>
+        <div class="nav-buttons">
+            <a href="#">Homepage</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </div>
+    </div>
+
+    <!-- Hero -->
+    <div class="headline">
         <h2>Focus</h2>
         <span class="subtitle">The Only Study Companion You Need!!!</span>
     </div>
 
+    <!-- Login Box -->
     <div class="login-container">
         <div class="logo">
             <img src="your-logo.png" alt="MCQ System Logo">
@@ -155,11 +256,37 @@
                 <label for="mobile">Mobile Number</label>
                 <input type="tel" id="mobile" placeholder="01XXXXXXXXX" pattern="[0-9]{11}" required>
             </div>
-            <button type="submit" class="login-btn">Send OTP</button>
+            <button type="submit" class="login-btn">Login</button>
         </form>
         <div class="footer">
             <p>New to MCQ System? <a href="#">Create Account</a></p>
         </div>
     </div>
+
+    <!-- Spacer to allow scrolling -->
+    <div class="content-spacer"></div>
+
+    <!-- Bottom Bar -->
+    <div class="bottom-bar" id="bottomBar">
+        <p>📞 Contact Us: +880-1234567890</p>
+        <p>📧 Email: <a href="mailto:support@focusmcq.com">support@focusmcq.com</a></p>
+        <p>🏢 Address: <a href="https://www.google.com/maps/search/Level+4,+House+7,+Road+5,+Dhanmondi,+Dhaka,+Bangladesh" target="_blank">Level 4, House 7, Road 5, Dhanmondi, Dhaka, Bangladesh</a></p>
+        <p>© 2025 Focus MCQ. All rights reserved.</p>
+    </div>
+
+    <script>
+        window.addEventListener('scroll', () => {
+            const bottomBar = document.getElementById('bottomBar');
+            const scrollPosition = window.scrollY + window.innerHeight;
+            const documentHeight = document.documentElement.scrollHeight;
+            
+            // Show bottom bar when scrolled near the bottom (within 100px)
+            if (scrollPosition >= documentHeight - 100) {
+                bottomBar.classList.add('visible');
+            } else {
+                bottomBar.classList.remove('visible');
+            }
+        });
+    </script>
 </body>
 </html>
